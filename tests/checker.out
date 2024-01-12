@@ -1,0 +1,61 @@
+make -C ../src UTIL_PATH=/home/abdi/my-shell/tests/../util clean
+make[1]: Entering directory '/home/abdi/my-shell/src'
+rm -f ../src.zip
+rm -rf main.o cmd.o utils.o /home/abdi/my-shell/tests/../util/parser/parser.tab.o /home/abdi/my-shell/tests/../util/parser/parser.yy.o mini-shell *~
+make[1]: Leaving directory '/home/abdi/my-shell/src'
+make clean
+make[1]: Entering directory '/home/abdi/my-shell/tests'
+rm -f *~
+make[1]: Leaving directory '/home/abdi/my-shell/tests'
+make -i SRC_PATH=../src
+make[1]: Entering directory '/home/abdi/my-shell/tests'
+make -C ../src UTIL_PATH=/home/abdi/my-shell/tests/../util CPPFLAGS=-I/home/abdi/my-shell/tests/../src
+make[2]: Entering directory '/home/abdi/my-shell/src'
+make -C /home/abdi/my-shell/tests/../util/parser/
+make[3]: Entering directory '/home/abdi/my-shell/util/parser'
+bison  parser.y
+make[3]: bison: No such file or directory
+make[3]: [Makefile:134: parser.tab.c] Error 127 (ignored)
+flex -oparser.yy.c parser.l
+make[3]: flex: No such file or directory
+make[3]: [Makefile:138: parser.yy.c] Error 127 (ignored)
+g++  -c UseParser.cpp
+gcc  -c parser.tab.c
+cc1: fatal error: parser.tab.c: No such file or directory
+compilation terminated.
+make[3]: [Makefile:150: parser.tab.o] Error 1 (ignored)
+make[3]: *** No rule to make target 'parser.tab.h', needed by 'parser.yy.o'.  Stop.
+make[3]: Leaving directory '/home/abdi/my-shell/util/parser'
+make[2]: [Makefile:16: build_parser] Error 2 (ignored)
+gcc -g -Wall -I/home/abdi/my-shell/tests/../src  -c -o main.o main.c
+gcc -g -Wall -I/home/abdi/my-shell/tests/../src  -c -o cmd.o cmd.c
+gcc -g -Wall -I/home/abdi/my-shell/tests/../src  -c -o utils.o utils.c
+make[2]: *** No rule to make target '/home/abdi/my-shell/tests/../util/parser/parser.tab.o', needed by 'mini-shell'.  Stop.
+make[2]: Leaving directory '/home/abdi/my-shell/src'
+make[1]: [Makefile:13: src] Error 2 (ignored)
+make[1]: Leaving directory '/home/abdi/my-shell/tests'
+SRC_PATH=../src ./run_all.sh
+ln: failed to access '../src/mini-shell': No such file or directory
+
+                         = Testing - mini-shell =
+
+mini-shell not found! Cannot run the test
+mini-shell not found! Cannot run the test
+mini-shell not found! Cannot run the test
+mini-shell not found! Cannot run the test
+mini-shell not found! Cannot run the test
+mini-shell not found! Cannot run the test
+mini-shell not found! Cannot run the test
+mini-shell not found! Cannot run the test
+mini-shell not found! Cannot run the test
+mini-shell not found! Cannot run the test
+mini-shell not found! Cannot run the test
+mini-shell not found! Cannot run the test
+mini-shell not found! Cannot run the test
+mini-shell not found! Cannot run the test
+mini-shell not found! Cannot run the test
+mini-shell not found! Cannot run the test
+mini-shell not found! Cannot run the test
+mini-shell not found! Cannot run the test
+
+                                                            Total:    0/100
